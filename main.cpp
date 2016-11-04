@@ -37,11 +37,7 @@ int main(int argc, char const *argv[]) {
     }
 
     for (int i = 0; i < 3; i++) {
-<<<<<<< HEAD
-        for (int j = 0; j <3; j++) {
-=======
         for (int j = 0;  j < 3; j++) {
->>>>>>> a6909538d1f2fc602c2b2d3f76858696fc75cd34
              frontal[i][j] = 'a';
              trasera[i][j] = 'b';
              superior[i][j] = 'c';
@@ -100,7 +96,7 @@ void imprimir(char** frontal,char** trasera,char** superior,char** inferior,char
         cout<<endl;
     }
 }
-<<<<<<< HEAD
+
 void deleteAll(char** frontal,char** trasera,char** superior,char** inferior,char** derecha,char** izquierda){
     for (int i = 0; i < 3; ++i)
     {
@@ -129,9 +125,6 @@ izquierda[i][j];
 derecha[i][j];
 */
 
-=======
-
-
 void moverF(char** frontal , char** derecha, char** izquierda,  char** superior , char** inferior){
 
     int * datosSuperior = new int[3];
@@ -157,4 +150,3 @@ void moverF(char** frontal , char** derecha, char** izquierda,  char** superior 
 
 
 }
->>>>>>> a6909538d1f2fc602c2b2d3f76858696fc75cd34
