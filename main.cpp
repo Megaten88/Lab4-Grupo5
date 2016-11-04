@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cmath>
+#include <stdlib.h>
+#include <random>
 
 using std::cout;
 using std::cin;
@@ -47,6 +49,10 @@ int main(int argc, char const *argv[]) {
         }
     }
 
+    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
+    moverHorario(frontal,derecha,izquierda,superior,inferior);
+    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
+    moverHorario(frontal,derecha,izquierda,superior,inferior);
     imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
     moverHorario(frontal,derecha,izquierda,superior,inferior);
     cout<<endl;
@@ -137,10 +143,10 @@ derecha[i][j];
 
 void moverHorario(char** frontal , char** derecha, char** izquierda,  char** superior , char** inferior){
 
-    int * datosSuperior = new int[3];
-    int * datosInferior = new int[3];
-    int * datosDerecha = new int[3];
-    int * datosIzquierda = new int[3];
+    char * datosSuperior = new char[3];
+    char * datosInferior = new char[3];
+    char * datosDerecha = new char[3];
+    char * datosIzquierda = new char[3];
 
     for (int i = 0; i < 3; i++) {
          datosSuperior[i] = superior[2][i];
@@ -148,6 +154,14 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
          datosDerecha[i] =  derecha[i][0];
          datosIzquierda[i] = izquierda[i][0];
     }
+
+    for (size_t i = 0; i < 3; i++) {
+        std::cout << datosSuperior[i] << std::endl;
+        std::cout << datosInferior[i] << std::endl;
+        std::cout <<datosDerecha[i]  << std::endl;
+        std::cout << datosIzquierda[i] << std::endl;
+    }
+
 
     for (int i = 0; i < 3; i++) {
         superior[2][i] = datosIzquierda[i];
@@ -171,8 +185,6 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
                    frontal[i][j] = temp;
                }
            }
-
-
 
 
     for(int i = 0; i < n; ++i) {
