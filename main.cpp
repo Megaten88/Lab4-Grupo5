@@ -159,7 +159,6 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
                 frontal[j][i] = temp;
             }
         }
-
            for(int i = 0; i < n; ++i) {
                for(int j = 0; j < n / 2; ++j) {
                    char temp = frontal[i][n - j - 1];
@@ -167,6 +166,7 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
                    frontal[i][j] = temp;
                }
            }
+
        }
 
 void antiHorario(char** frontal,char** derecha,char** izquierda,char** superior, char** inferior){
