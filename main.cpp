@@ -6,8 +6,10 @@ using namespace std;
 
 void imprimir(char** , int);
 
+void moverF();
+void moverf();
+
 int main(int argc, char const *argv[]) {
-    vector<char ** > cubo;
     int numero = 0;
 
     char ** frontal ;
@@ -45,4 +47,15 @@ int main(int argc, char const *argv[]) {
     }
 
     return 0;
+}
+
+
+void imprimir(char** matriz ){
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout <<"["<< matriz[i][j] <<"]";
+        }
+            cout<<endl;
+    }
 }
