@@ -11,7 +11,7 @@ void antiHorario(char** , char** , char** ,  char**  , char** );
 void deleteAll(char**,char**,char**,char**,char**,char**);
 
 int main(int argc, char const *argv[]) {
-    int numero = 0;
+    int num = 1;
 
     char ** frontal ;
     char ** trasera ;
@@ -46,11 +46,39 @@ int main(int argc, char const *argv[]) {
              derecha[i][j] = 'e';
         }
     }
+    while(num != 0){
+        cout<<"-----CUBO DE RUBIK---"<< endl;
+        cout<<"0)Salir \n 1) Mover cubo \n 2) Shuffle \n "<<endl;
+        cin>>num;
+        if (num == 1){
+            char opcion = 'n';
+            while(opcion != 's'){
+                imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
+                cout<<"Ingrese su opcion: \n* F mueve la cara frontal en sentido horario. \n* f mueve la cara frontal en sentido anti-horario.\n* X mueve la cara trasera en sentido horario.\n* x mueve la cara trasera en sentido anti-horario.\n* U mueve la cara superior en sentido horario.\n* u mueve la cara superior en sentido anti-horario.\n* B mueve la cara inferior en sentido horario.\n* b mueve la cara inferior en sentido anti-horario.\n* R mueve la cara derecha en sentido horario.\n* r mueve la cara derecha en sentido anti-horario.\n* L mueve la cara izquierda en sentido horario.\n* l mueve la cara izquierda en sentido anti-horario. \n Ingrese S para no mover;"<<endl;
+                cin>> opcion;
+                if (opcion == 'F')
+                {
+                    moverHorario(frontal,derecha,izquierda,superior,inferior);
+                }
+                if (opcion == 'f')
+                {
+                    antiHorario(frontal,derecha,izquierda,superior,inferior);
+                }
+                if (opcion == 'X')
+                {
+                    moverHorario(trasera,izquierda,derecha,superior,inferior);
+                }
+                if (opcion == 'x')
+                {
+                    antiHorario(trasera,izquierda,derecha,superior,inferior);
+                }
+                imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
+            }
+        }
+        if(num == 2){
 
-    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-    moverHorario(frontal,derecha,izquierda,superior,inferior);
-    cout<<endl;
-    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
+        }
+    }
     deleteAll(frontal,trasera,superior,inferior,derecha,izquierda);
     return 0;
 }
