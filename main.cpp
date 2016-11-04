@@ -51,7 +51,7 @@ int main(int argc, char const *argv[]) {
     moverHorario(frontal,derecha,izquierda,superior,inferior);
     cout<<endl;
     imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-    deleteAll(frontal,trasera,superior,inferior,izquierda,derecha);
+    deleteAll(frontal,trasera,superior,inferior,derecha,izquierda);
     return 0;
 }
 
