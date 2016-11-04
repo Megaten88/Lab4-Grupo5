@@ -6,8 +6,8 @@ using std::cin;
 using std::endl;
 
 void imprimir(char**,char**,char**,char**,char**,char**);
-void moverF(char** , char** , char** ,  char**  , char** );
-void moverf();
+void moverHorario(char** , char** , char** ,  char**  , char** );
+void antiHorario();
 void deleteAll(char**,char**,char**,char**,char**,char**);
 
 int main(int argc, char const *argv[]) {
@@ -42,10 +42,13 @@ int main(int argc, char const *argv[]) {
              trasera[i][j] = 'b';
              superior[i][j] = 'c';
              inferior[i][j] = 'd';
-             izquierda[i][j] = 'e';
-             derecha[i][j] = 'f';
+             izquierda[i][j] = 'f';
+             derecha[i][j] = 'e';
         }
     }
+
+
+
 
     imprimir(frontal,trasera,superior,inferior,izquierda,derecha);
     deleteAll(frontal,trasera,superior,inferior,izquierda,derecha);
@@ -127,7 +130,7 @@ derecha[i][j];
 */
 
 
-void moverF(char** frontal , char** derecha, char** izquierda,  char** superior , char** inferior){
+void moverHorario(char** frontal , char** derecha, char** izquierda,  char** superior , char** inferior){
 
     int * datosSuperior = new int[3];
     int * datosInferior = new int[3];
@@ -138,14 +141,14 @@ void moverF(char** frontal , char** derecha, char** izquierda,  char** superior 
          datosSuperior[i] = superior[2][i];
          datosInferior[i] = inferior[2][i];
          datosDerecha[i] =  derecha[i][0];
-         datosIzquierda[i] = izquieda[i][0];
+         datosIzquierda[i] = izquierda[i][0];
     }
 
     for (int i = 0; i < 3; i++) {
         superior[2][i] = datosIzquierda[i];
         inferior[2][i] = datosDerecha[i];
         derecha[i][0] = datosSuperior[i];
-        izquieda[i][0] = datosInferior[i] ;
+        izquierda[i][0] = datosInferior[i] ;
     }
 
 
