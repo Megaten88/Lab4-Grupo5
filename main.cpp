@@ -156,8 +156,8 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
     int n = 3;
            for(int i = 0; i < n; ++i) {
                for(int j = 0; j < n / 2; ++j) {
-                   int temp = frontal[i][n - j - 1];
-                   frontal[i][n - j - 1] = matrix[i][j];
+                   char temp = frontal[i][n - j - 1];
+                   frontal[i][n - j - 1] = frontal[i][j];
                    frontal[i][j] = temp;
                }
            }
