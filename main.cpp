@@ -151,9 +151,9 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
 
     for (int i = 0; i < 3; i++) {
         superior[2][i] = datosIzquierda[i];
-        inferior[2][i] = datosDerecha[i];
+        inferior[0][i] = datosDerecha[i];
         derecha[i][0] = datosSuperior[i];
-        izquierda[i][0] = datosInferior[i] ;
+        izquierda[i][2] = datosInferior[i] ;
     }
 
     int n = 3;
@@ -164,6 +164,17 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
             frontal[j][i] = temp;
         }
     }
+           for(int i = 0; i < n; ++i) {
+               for(int j = 0; j < n / 2; ++j) {
+                   char temp = frontal[i][n - j - 1];
+                   frontal[i][n - j - 1] = frontal[i][j];
+                   frontal[i][j] = temp;
+               }
+           }
+
+
+
+
     for(int i = 0; i < n; ++i) {
         for(int j = 0; j < n / 2; ++j) {
             char temp = frontal[i][n - j - 1];
@@ -175,7 +186,8 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
     delete[] datosInferior;
     delete[] datosDerecha;
     delete[] datosIzquierda;
-}       
+}
+
 
 void antiHorario(char** frontal,char** derecha,char** izquierda,char** superior, char** inferior){
     int * datosSuperior = new int[3];
