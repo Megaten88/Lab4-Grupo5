@@ -154,14 +154,15 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
          datosDerecha[i] =  derecha[i][0];
          datosIzquierda[i] = izquierda[i][0];
     }
-
+    //comprobación de los valores agarrados;
+ /*
     for (size_t i = 0; i < 3; i++) {
         std::cout << datosSuperior[i] << std::endl;
         std::cout << datosInferior[i] << std::endl;
         std::cout <<datosDerecha[i]  << std::endl;
         std::cout << datosIzquierda[i] << std::endl;
     }
-
+*/
 
     for (int i = 0; i < 3; i++) {
         superior[2][i] = datosIzquierda[i];
@@ -206,6 +207,7 @@ void antiHorario(char** frontal,char** derecha,char** izquierda,char** superior,
     int * datosInferior = new int[3];
     int * datosDerecha = new int[3];
     int * datosIzquierda = new int[3];
+
     for (int i = 0; i < 3; ++i)
     {
         datosSuperior[i] = superior[2][i];
