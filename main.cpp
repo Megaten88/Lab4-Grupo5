@@ -7,7 +7,7 @@ using std::endl;
 
 void imprimir(char**,char**,char**,char**,char**,char**);
 void moverHorario(char** , char** , char** ,  char**  , char** );
-void antiHorario();
+void antiHorario(char** , char** , char** ,  char**  , char** );
 void deleteAll(char**,char**,char**,char**,char**,char**);
 
 int main(int argc, char const *argv[]) {
@@ -51,7 +51,7 @@ int main(int argc, char const *argv[]) {
 
 
     imprimir(frontal,trasera,superior,inferior,izquierda,derecha);
-    moverF(frontal,derecha,izquierda,superior,inferior);
+    moverHorario(frontal,derecha,izquierda,superior,inferior);
     imprimir(frontal,trasera,superior,inferior,izquierda,derecha);
     deleteAll(frontal,trasera,superior,inferior,izquierda,derecha);
     return 0;
@@ -153,8 +153,7 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
         izquierda[i][0] = datosInferior[i] ;
     }
 
-
-
-
+}
+void antiHorario(char** frontal,char** derecha,char** izquierda,char** superior, char** inferior){
 
 }
