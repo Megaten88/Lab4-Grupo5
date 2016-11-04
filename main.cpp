@@ -47,9 +47,6 @@ int main(int argc, char const *argv[]) {
         }
     }
 
-
-
-
     imprimir(frontal,trasera,superior,inferior,izquierda,derecha);
     moverHorario(frontal,derecha,izquierda,superior,inferior);
     imprimir(frontal,trasera,superior,inferior,izquierda,derecha);
@@ -154,6 +151,15 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
     }
 
     int n = 3;
+
+        for(int i = 0; i < n; ++i) {
+            for(int j = i + 1; j < n; ++j) {
+                char temp = frontal[i][j];
+                frontal[i][j] = frontal[j][i];
+                frontal[j][i] = temp;
+            }
+        }
+
            for(int i = 0; i < n; ++i) {
                for(int j = 0; j < n / 2; ++j) {
                    char temp = frontal[i][n - j - 1];
@@ -163,7 +169,6 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
            }
        }
 
-}
 void antiHorario(char** frontal,char** derecha,char** izquierda,char** superior, char** inferior){
 
 }
