@@ -140,14 +140,14 @@ void moverF(char** frontal , char** derecha, char** izquierda,  char** superior 
          datosSuperior[i] = superior[2][i];
          datosInferior[i] = inferior[2][i];
          datosDerecha[i] =  derecha[i][0];
-         datosIzquierda[i] = izquieda[i][0];
+         datosIzquierda[i] = izquierda[i][0];
     }
 
     for (int i = 0; i < 3; i++) {
         superior[2][i] = datosIzquierda[i];
         inferior[2][i] = datosDerecha[i];
         derecha[i][0] = datosSuperior[i];
-        izquieda[i][0] = datosInferior[i] ;
+        izquierda[i][0] = datosInferior[i] ;
     }
 
 
