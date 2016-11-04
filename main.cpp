@@ -27,16 +27,16 @@ int main(int argc, char const *argv[]) {
     derecha = new char*[3];
 
     for (size_t i = 0; i < 3; i++) {
-        frontal[i] = new char*[3];
-        trasera[i] = new char*[3];
-        superior[i] = new char*[3];
-        inferior[i] = new char*[3];
-        izquierda[i] = new char*[3];
-        derecha[i] = new char*[3];
+        frontal[i] = new char[3];
+        trasera[i] = new char[3];
+        superior[i] = new char[3];
+        inferior[i] = new char[3];
+        izquierda[i] = new char[3];
+        derecha[i] = new char[3];
     }
 
     for (int i = 0; i < 3; i++) {
-        for (int j = 0; i j 3; j++) {
+        for (int j = 0;  j < 3; j++) {
              frontal[i][j] = 'a';
              trasera[i][j] = 'b';
              superior[i][j] = 'c';
@@ -58,4 +58,22 @@ void imprimir(char** matriz ){
         }
             cout<<endl;
     }
+}
+
+
+void moverF(char** frontal , char** derecha, char** izquierda,  char** superior , char** inferior){
+
+    int * datosSuperior = new int[3];
+    int * datosInferior = new int[3];
+    int * datosDerecha = new int[3];
+    int * datosIzquierda = new int[3];
+
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+
+        }
+    }
+
+
 }
