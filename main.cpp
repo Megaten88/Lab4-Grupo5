@@ -1,13 +1,14 @@
 #include <iostream>
 #include <cmath>
-#include <vector>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
 
-void imprimir(char** , int);
-
+void imprimir(char**,char**,char**,char**,char**,char**);
 void moverF();
 void moverf();
+void deleteAll(char**,char**,char**,char**,char**,char**);
 
 int main(int argc, char const *argv[]) {
     int numero = 0;
@@ -27,16 +28,16 @@ int main(int argc, char const *argv[]) {
     derecha = new char*[3];
 
     for (size_t i = 0; i < 3; i++) {
-        frontal[i] = new char*[3];
-        trasera[i] = new char*[3];
-        superior[i] = new char*[3];
-        inferior[i] = new char*[3];
-        izquierda[i] = new char*[3];
-        derecha[i] = new char*[3];
+        frontal[i] = new char[3];
+        trasera[i] = new char[3];
+        superior[i] = new char[3];
+        inferior[i] = new char[3];
+        izquierda[i] = new char[3];
+        derecha[i] = new char[3];
     }
 
     for (int i = 0; i < 3; i++) {
-        for (int j = 0; i j 3; j++) {
+        for (int j = 0; j <3; j++) {
              frontal[i][j] = 'a';
              trasera[i][j] = 'b';
              superior[i][j] = 'c';
@@ -45,17 +46,81 @@ int main(int argc, char const *argv[]) {
              derecha[i][j] = 'f';
         }
     }
-
+    imprimir(frontal,trasera,superior,inferior,izquierda,derecha);
+    deleteAll(frontal,trasera,superior,inferior,izquierda,derecha);
     return 0;
 }
 
 
-void imprimir(char** matriz ){
+void imprimir(char** frontal,char** trasera,char** superior,char** inferior,char** derecha,char** izquierda){
 
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            cout <<"["<< matriz[i][j] <<"]";
+            cout <<"["<< frontal[i][j] <<"]";
         }
-            cout<<endl;
+        cout<<endl;
+    }
+    cout<<endl;
+     for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout <<"["<< trasera[i][j] <<"]";
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+     for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout <<"["<< superior[i][j] <<"]";
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+     for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout <<"["<< inferior[i][j] <<"]";
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+     for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout <<"["<< derecha[i][j] <<"]";
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+     for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout <<"["<< izquierda[i][j] <<"]";
+        }
+        cout<<endl;
     }
 }
+void deleteAll(char** frontal,char** trasera,char** superior,char** inferior,char** derecha,char** izquierda){
+    for (int i = 0; i < 3; ++i)
+    {
+        delete[] frontal[i];
+        delete[] trasera[i];
+        delete[] superior[i];
+        delete[] inferior[i];
+        delete[] izquierda[i];
+        delete[] derecha[i];
+    }
+    delete[] frontal;
+    delete[] trasera;
+    delete[] superior;
+    delete[] inferior;
+    delete[] izquierda;
+    delete[] derecha;
+    cout<<endl;
+    cout<<"DeletedALL"<<endl;
+}
+/*
+frontal[i][j];
+trasera[i][j];
+superior[i][j];
+inferior[i][j];
+izquierda[i][j];
+derecha[i][j];
+*/
+
