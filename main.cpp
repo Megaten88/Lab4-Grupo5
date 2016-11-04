@@ -47,10 +47,10 @@ int main(int argc, char const *argv[]) {
         }
     }
 
-    imprimir(frontal,trasera,superior,inferior,izquierda,derecha);
-    antiHorario(frontal,derecha,izquierda,superior,inferior);
+    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
+    moverHorario(frontal,derecha,izquierda,superior,inferior);
     cout<<endl;
-    imprimir(frontal,trasera,superior,inferior,izquierda,derecha);
+    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
     deleteAll(frontal,trasera,superior,inferior,izquierda,derecha);
     return 0;
 }
