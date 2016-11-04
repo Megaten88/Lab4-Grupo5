@@ -37,11 +37,7 @@ int main(int argc, char const *argv[]) {
     }
 
     for (int i = 0; i < 3; i++) {
-
-        for (int j = 0; j <3; j++) {
-
         for (int j = 0;  j < 3; j++) {
-
              frontal[i][j] = 'a';
              trasera[i][j] = 'b';
              superior[i][j] = 'c';
@@ -50,6 +46,7 @@ int main(int argc, char const *argv[]) {
              derecha[i][j] = 'f';
         }
     }
+
     imprimir(frontal,trasera,superior,inferior,izquierda,derecha);
     deleteAll(frontal,trasera,superior,inferior,izquierda,derecha);
     return 0;
@@ -128,8 +125,6 @@ inferior[i][j];
 izquierda[i][j];
 derecha[i][j];
 */
-
-
 
 
 void moverF(char** frontal , char** derecha, char** izquierda,  char** superior , char** inferior){
