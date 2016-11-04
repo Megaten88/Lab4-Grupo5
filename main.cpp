@@ -6,7 +6,7 @@ using std::cin;
 using std::endl;
 
 void imprimir(char**,char**,char**,char**,char**,char**);
-void moverF();
+void moverF(char** , char** , char** ,  char**  , char** );
 void moverf();
 void deleteAll(char**,char**,char**,char**,char**,char**);
 
@@ -136,7 +136,6 @@ void moverF(char** frontal , char** derecha, char** izquierda,  char** superior 
     int * datosDerecha = new int[3];
     int * datosIzquierda = new int[3];
 
-
     for (int i = 0; i < 3; i++) {
          datosSuperior[i] = superior[2][i];
          datosInferior[i] = inferior[2][i];
@@ -149,8 +148,10 @@ void moverF(char** frontal , char** derecha, char** izquierda,  char** superior 
         inferior[2][i] = datosDerecha[i];
         derecha[i][0] = datosSuperior[i];
         izquieda[i][0] = datosInferior[i] ;
-
     }
+
+
+
 
 
 }
