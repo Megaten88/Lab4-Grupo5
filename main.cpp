@@ -48,6 +48,8 @@ int main(int argc, char const *argv[]) {
     }
 
     imprimir(frontal,trasera,superior,inferior,izquierda,derecha);
+    moverF(frontal,derecha,izquierda,superior,inferior);
+    imprimir(frontal,trasera,superior,inferior,izquierda,derecha);
     deleteAll(frontal,trasera,superior,inferior,izquierda,derecha);
     return 0;
 }
