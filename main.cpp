@@ -48,7 +48,7 @@ int main(int argc, char const *argv[]) {
     }
     while(num != 0){
         cout<<"-----CUBO DE RUBIK---"<< endl;
-        cout<<"0)Salir \n 1) Mover cubo \n 2) Shuffle \n "<<endl;
+        cout<<" 0)Salir \n 1) Mover cubo \n 2) Shuffle \n";
         cin>>num;
         if (num == 1){
             char opcion;
@@ -261,9 +261,6 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
                    frontal[i][j] = temp;
                }
            }
-
-
-
 
     for(int i = 0; i < n; ++i) {
         for(int j = 0; j < n / 2; ++j) {
