@@ -13,12 +13,12 @@ void deleteAll(char**,char**,char**,char**,char**,char**);
 int main(int argc, char const *argv[]) {
     int num = 1;
 
-    char ** frontal ;
-    char ** trasera ;
-    char ** superior ;
-    char ** inferior ;
-    char ** izquierda ;
-    char ** derecha ;
+    char ** frontal = NULL ;
+    char ** trasera  = NULL;
+    char ** superior = NULL;
+    char ** inferior = NULL;
+    char ** izquierda = NULL;
+    char ** derecha = NULL;
 
     frontal = new char*[3];
     trasera = new char*[3];
@@ -53,7 +53,7 @@ int main(int argc, char const *argv[]) {
         if (num == 1){
             char opcion;
             imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-            while(opcion != 's'){
+            while(opcion != 's' && opcion != 'S'){
                 cout<<"Ingrese su opcion: \n* F mueve la cara frontal en sentido horario. \n* f mueve la cara frontal en sentido anti-horario.\n* X mueve la cara trasera en sentido horario.\n* x mueve la cara trasera en sentido anti-horario.\n* U mueve la cara superior en sentido horario.\n* u mueve la cara superior en sentido anti-horario.\n* B mueve la cara inferior en sentido horario.\n* b mueve la cara inferior en sentido anti-horario.\n* R mueve la cara derecha en sentido horario.\n* r mueve la cara derecha en sentido anti-horario.\n* L mueve la cara izquierda en sentido horario.\n* l mueve la cara izquierda en sentido anti-horario. \n Ingrese S para no mover;"<<endl;
                 cin>>opcion;
                 if (opcion == 'F')
@@ -107,6 +107,7 @@ int main(int argc, char const *argv[]) {
                 cout<<endl;
                 imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
             }
+            opcion = 'n';
         }
         if(num == 2){
             deleteAll(frontal,trasera,superior,inferior,derecha,izquierda);
@@ -137,7 +138,6 @@ int main(int argc, char const *argv[]) {
                 }
             }
             cout<<endl;
-            imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
         }
 
     }
