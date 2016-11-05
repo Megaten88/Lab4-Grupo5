@@ -170,49 +170,9 @@ int main(int argc, char const *argv[]) {
             }
 
         }
-
-            frontal = new char*[3];
-            trasera = new char*[3];
-            superior = new char*[3];
-            inferior = new char*[3];
-            izquierda = new char*[3];
-            derecha = new char*[3];
-
-    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-    moverHorario(frontal,derecha,izquierda,superior,inferior);
-    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-    moverHorario(frontal,derecha,izquierda,superior,inferior);
-    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-    moverHorario(frontal,derecha,izquierda,superior,inferior);
-    cout<<endl;
-    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-            for (size_t i = 0; i < 3; i++) {
-                frontal[i] = new char[3];
-                trasera[i] = new char[3];
-                superior[i] = new char[3];
-                inferior[i] = new char[3];
-                izquierda[i] = new char[3];
-                derecha[i] = new char[3];
-            }
-
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0;  j < 3; j++) {
-                    frontal[i][j] = 'a';
-                    trasera[i][j] = 'b';
-                    superior[i][j] = 'c';
-                    inferior[i][j] = 'd';
-                    izquierda[i][j] = 'f';
-                    derecha[i][j] = 'e';
-                }
-            }
-            cout<<endl;
-        }
-    deleteAll(frontal,trasera,superior,inferior,derecha,izquierda);
-
-
+    }
     return 0;
 }
-
 
 void imprimir(char** frontal,char** trasera,char** superior,char** inferior,char** derecha,char** izquierda){
     cout<<"Cara Frontal"<<endl;
@@ -355,7 +315,6 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
 
 
 void antiHorario(char** frontal,char** derecha,char** izquierda,char** superior, char** inferior){
-
     char* datosSuperior = new char[3];
     char* datosInferior= new char[3];
     char* datosDerecha = new char[3];
