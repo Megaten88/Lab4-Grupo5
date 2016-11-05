@@ -177,6 +177,7 @@ int main(int argc, char const *argv[]) {
 
         }
     }
+    deleteAll(frontal,trasera,superior,inferior,derecha,izquierda);
     return 0;
 }
 
