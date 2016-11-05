@@ -1,8 +1,0 @@
-#include <vector>
-vector<int**> hola;
-hola.push_back() // igual a .add de javahola.ho
-hola.pop, borra el último elemento
-hola.at(i) // .get()
-hola.size()
-hola.erase(hola.begin()+1);
-vector.clear();
