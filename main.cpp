@@ -1,12 +1,14 @@
 #include <iostream>
 #include <cmath>
+#include <stdlib.h>
+#include <random>
 
 using std::cout;
 using std::cin;
 using std::endl;
 
-void imprimir(char**,char**,char**,char**,char**,char**);
-void moverHorario(char** , char** , char** ,  char**  , char** );
+void imprimir(char** ,char** ,char** ,char** ,char** ,char** );
+void moverHorario(char** , char** , char** ,  char** , char**  );
 void antiHorario(char** , char** , char** ,  char**  , char** );
 void deleteAll(char**,char**,char**,char**,char**,char**);
 
@@ -110,7 +112,65 @@ int main(int argc, char const *argv[]) {
             opcion = 'n';
         }
         if(num == 2){
-            deleteAll(frontal,trasera,superior,inferior,derecha,izquierda);
+
+            int aleatorio;
+            int contador= 0;
+            while(contador<15){
+                aleatorio = rand()%12 +1;
+
+                if (aleatorio == 1)
+                {
+                    moverHorario(frontal,derecha,izquierda,superior,inferior);
+                }
+                if (aleatorio == 2)
+                {
+                    antiHorario(frontal,derecha,izquierda,superior,inferior);
+                }
+                if (aleatorio == 3)
+                {
+                    moverHorario(trasera,izquierda,derecha,superior,inferior);
+                }
+                if (aleatorio == 4)
+                {
+                    antiHorario(trasera,izquierda,derecha,superior,inferior);
+                }
+                if (aleatorio == 5)
+                {
+                    moverHorario(superior,derecha,izquierda,trasera,frontal);
+                }
+                if (aleatorio == 6)
+                {
+                    antiHorario(superior,derecha,izquierda,trasera,frontal);
+                }
+                if (aleatorio == 7)
+                {
+                    moverHorario(inferior,derecha,izquierda,frontal,trasera);
+                }
+                if (aleatorio == 8)
+                {
+                    antiHorario(inferior,derecha,izquierda,frontal,trasera);
+                }
+                if (aleatorio == 9)
+                {
+                    moverHorario(derecha,trasera,frontal,superior,inferior);
+                }
+                if (aleatorio == 10)
+                {
+                    antiHorario(derecha,trasera,frontal,superior,inferior);
+                }
+                if (aleatorio == 11)
+                {
+                    moverHorario(izquierda,frontal,trasera,superior,inferior);
+                }
+                if (aleatorio == 12)
+                {
+                    antiHorario(izquierda,frontal,trasera,superior,inferior);
+                }
+                contador++;
+            }
+
+        }
+
             frontal = new char*[3];
             trasera = new char*[3];
             superior = new char*[3];
@@ -118,6 +178,14 @@ int main(int argc, char const *argv[]) {
             izquierda = new char*[3];
             derecha = new char*[3];
 
+    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
+    moverHorario(frontal,derecha,izquierda,superior,inferior);
+    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
+    moverHorario(frontal,derecha,izquierda,superior,inferior);
+    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
+    moverHorario(frontal,derecha,izquierda,superior,inferior);
+    cout<<endl;
+    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
             for (size_t i = 0; i < 3; i++) {
                 frontal[i] = new char[3];
                 trasera[i] = new char[3];
@@ -139,9 +207,9 @@ int main(int argc, char const *argv[]) {
             }
             cout<<endl;
         }
-
-    }
     deleteAll(frontal,trasera,superior,inferior,derecha,izquierda);
+
+
     return 0;
 }
 
@@ -227,10 +295,10 @@ derecha[i][j];
 
 void moverHorario(char** frontal , char** derecha, char** izquierda,  char** superior , char** inferior){
 
-    int * datosSuperior = new int[3];
-    int * datosInferior = new int[3];
-    int * datosDerecha = new int[3];
-    int * datosIzquierda = new int[3];
+    char * datosSuperior = new char[3];
+    char * datosInferior = new char[3];
+    char * datosDerecha = new char[3];
+    char * datosIzquierda = new char[3];
 
     for (int i = 0; i < 3; i++) {
          datosSuperior[i] = superior[2][i];
@@ -238,6 +306,15 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
          datosDerecha[i] =  derecha[i][0];
          datosIzquierda[i] = izquierda[i][0];
     }
+    //comprobación de los valores agarrados;
+ /*
+    for (size_t i = 0; i < 3; i++) {
+        std::cout << datosSuperior[i] << std::endl;
+        std::cout << datosInferior[i] << std::endl;
+        std::cout <<datosDerecha[i]  << std::endl;
+        std::cout << datosIzquierda[i] << std::endl;
+    }
+*/
 
     for (int i = 0; i < 3; i++) {
         superior[2][i] = datosIzquierda[i];
@@ -262,6 +339,7 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
                }
            }
 
+
     for(int i = 0; i < n; ++i) {
         for(int j = 0; j < n / 2; ++j) {
             char temp = frontal[i][n - j - 1];
@@ -277,6 +355,7 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
 
 
 void antiHorario(char** frontal,char** derecha,char** izquierda,char** superior, char** inferior){
+
     char* datosSuperior = new char[3];
     char* datosInferior= new char[3];
     char* datosDerecha = new char[3];
