@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
 #include <random>
 
 using std::cout;
@@ -185,25 +187,7 @@ int main(int argc, char const *argv[]) {
     moverHorario(frontal,derecha,izquierda,superior,inferior);
     cout<<endl;
     imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-            for (size_t i = 0; i < 3; i++) {
-                frontal[i] = new char[3];
-                trasera[i] = new char[3];
-                superior[i] = new char[3];
-                inferior[i] = new char[3];
-                izquierda[i] = new char[3];
-                derecha[i] = new char[3];
-            }
 
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0;  j < 3; j++) {
-                    frontal[i][j] = 'a';
-                    trasera[i][j] = 'b';
-                    superior[i][j] = 'c';
-                    inferior[i][j] = 'd';
-                    izquierda[i][j] = 'f';
-                    derecha[i][j] = 'e';
-                }
-            }
             cout<<endl;
             imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
         }
