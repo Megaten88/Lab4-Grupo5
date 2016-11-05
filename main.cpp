@@ -17,12 +17,12 @@ void deleteAll(char**,char**,char**,char**,char**,char**);
 int main(int argc, char const *argv[]) {
     int num = 1;
 
-    char ** frontal ;
-    char ** trasera ;
-    char ** superior ;
-    char ** inferior ;
-    char ** izquierda ;
-    char ** derecha ;
+    char ** frontal = NULL ;
+    char ** trasera  = NULL;
+    char ** superior = NULL;
+    char ** inferior = NULL;
+    char ** izquierda = NULL;
+    char ** derecha = NULL;
 
     frontal = new char*[3];
     trasera = new char*[3];
@@ -57,7 +57,7 @@ int main(int argc, char const *argv[]) {
         if (num == 1){
             char opcion;
             imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-            while(opcion != 's'){
+            while(opcion != 's' && opcion != 'S'){
                 cout<<"Ingrese su opcion: \n* F mueve la cara frontal en sentido horario. \n* f mueve la cara frontal en sentido anti-horario.\n* X mueve la cara trasera en sentido horario.\n* x mueve la cara trasera en sentido anti-horario.\n* U mueve la cara superior en sentido horario.\n* u mueve la cara superior en sentido anti-horario.\n* B mueve la cara inferior en sentido horario.\n* b mueve la cara inferior en sentido anti-horario.\n* R mueve la cara derecha en sentido horario.\n* r mueve la cara derecha en sentido anti-horario.\n* L mueve la cara izquierda en sentido horario.\n* l mueve la cara izquierda en sentido anti-horario. \n Ingrese S para no mover;"<<endl;
                 cin>>opcion;
                 if (opcion == 'F')
@@ -111,6 +111,7 @@ int main(int argc, char const *argv[]) {
                 cout<<endl;
                 imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
             }
+            opcion = 'n';
         }
         if(num == 2){
 
@@ -171,32 +172,9 @@ int main(int argc, char const *argv[]) {
             }
 
         }
-
-            frontal = new char*[3];
-            trasera = new char*[3];
-            superior = new char*[3];
-            inferior = new char*[3];
-            izquierda = new char*[3];
-            derecha = new char*[3];
-
-    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-    moverHorario(frontal,derecha,izquierda,superior,inferior);
-    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-    moverHorario(frontal,derecha,izquierda,superior,inferior);
-    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-    moverHorario(frontal,derecha,izquierda,superior,inferior);
-    cout<<endl;
-    imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-
-            cout<<endl;
-            imprimir(frontal,trasera,superior,inferior,derecha,izquierda);
-        }
-    deleteAll(frontal,trasera,superior,inferior,derecha,izquierda);
-
-
+    }
     return 0;
 }
-
 
 void imprimir(char** frontal,char** trasera,char** superior,char** inferior,char** derecha,char** izquierda){
     cout<<"Cara Frontal"<<endl;
@@ -339,7 +317,6 @@ void moverHorario(char** frontal , char** derecha, char** izquierda,  char** sup
 
 
 void antiHorario(char** frontal,char** derecha,char** izquierda,char** superior, char** inferior){
-
     char* datosSuperior = new char[3];
     char* datosInferior= new char[3];
     char* datosDerecha = new char[3];
