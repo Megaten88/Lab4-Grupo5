@@ -50,7 +50,7 @@ int main(int argc, char const *argv[]) {
     }
     while(num != 0){
         cout<<"-----CUBO DE RUBIK---"<< endl;
-        cout<<"0)Salir \n 1) Mover cubo \n 2) Shuffle \n "<<endl;
+        cout<<" 0)Salir \n 1) Mover cubo \n 2) Shuffle \n";
         cin>>num;
         if (num == 1){
             char opcion;
